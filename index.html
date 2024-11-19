@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Perfis</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    /* Adiciona a transição suave */
+    .profile-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .profile-card img {
+      transition: transform 0.3s ease;
+    }
+
+    #foto {
+      max-height: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Galeria de Perfis</h1>
+    <div class="row g-4">
+      <!-- Cartão 1 -->
+      <div class="col-md-4">
+        <div class="card profile-card animate__animated">
+          <img src="./img/homem.jpg" class="card-img-top" alt="Profile 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">João Silva</h5>
+            <p class="card-text">Desenvolvedor Front-End</p>
+            <a href="#" class="btn btn-primary">Ver Perfil</a>
+          </div>
+        </div>
+      </div>
+      <!-- Cartão 2 -->
+      <div class="col-md-4">
+        <div class="card profile-card animate__animated">
+          <img id="foto" src="./img/mulher.jpg" class="card-img-top" alt="Profile 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Maria Oliveira</h5>
+            <p class="card-text">Designer Gráfico</p>
+            <a href="#" class="btn btn-primary">Ver Perfil</a>
+          </div>
+        </div>
+      </div>
+      <!-- Cartão 3 -->
+      <div class="col-md-4">
+        <div class="card profile-card animate__animated">
+          <img src="./img/images.jfif" class="card-img-top" alt="Profile 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Carlos Lima</h5>
+            <p class="card-text">Gerente de Projetos</p>
+            <a href="#" class="btn btn-primary">Ver Perfil</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Script para aplicar a animação ao passar o mouse -->
+  <script>
+    const cards = document.querySelectorAll('.profile-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('animate__pulse'); // Aplica a animação "pulse" ao passar o mouse
+      });
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('animate__pulse'); // Remove a animação ao tirar o mouse
+      });
+    });
+  </script>
+</body>
+</html>
+
+
